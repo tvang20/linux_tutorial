@@ -1,34 +1,85 @@
-# linux_tutorial
+# Linux Environment Tutorial (using `venv`)
 
-This is a tutorial for how to use and navigate through environments in linux. We will be creating environments using the built-in venv python module. You need to have python 3.3+ install as ADMIN.
-The same thing can be done on the HPC.
+This is a tutorial for how to use and navigate environments in Linux using Python’s built-in `venv` module.  
+You need to have **Python 3.3+ installed** (with `python3-venv` available).  
+These instructions also apply to HPC (High Performance Computing) environments.
 
-1) Checking our python version and seeing if venv is installed, if not we will install it.
-  A) $python3 --version
-  B) $python3 -m venv --help
-  C) If you need to install $sudo apt install python3-venv
+---
 
-3) Next, we're going to create a folder to STORE all our environments.
-   A) Make sure you're at the home directory.
-   B) $mkdir -p ~/envs
+## 1. Check Python Version and `venv` Availability
 
-4) We are now going to create our FIRST environment and activate it.
-   A) $python3 -m venv ~/envs/guo_lab
-   B) $source ~/envs/guo_lab/bin/activate
-       You should have "guo_lab" next to your computer name.
-   C) $deactivate: deactivates the current enviroment.
+```bash
+python3 --version               # Check Python version
+python3 -m venv --help          # Check if venv is available
+```
 
-5) Installing some packages
-    A) $pip install numpy
-    B) $pip install pandas
+If `venv` is not available:
 
-6) List of IMPORTANT COMMANDS
-  A) $pip list: Checking what packages are INSTALL in the environment
-  B) $pip freeze > requirements.txt: Will store all packages into an txt file in case you need to duplicate environment
-     $pip freeze: prints the version of each package installed.
-  C) $pip install -r /path/to/requirements.txt: If you want to duplicate the current enviroment, you can create a NEW enviroment and use this command.
-      # For example, you have a base enviroment that encapsulates majority of the packages that are needed, but you only want to install a few new ones for a new project.
+```bash
+sudo apt install python3-venv
+```
 
-7) OTHER useful linux commands
-   A) chmod +x script.sh : makes the script you created executable.
-   B) ./script.sh : executes the script
+---
+
+## 2. Create a Folder to Store Environments
+
+```bash
+cd ~
+mkdir -p ~/envs                 # Folder for all your environments
+```
+
+---
+
+## 3. Create and Activate Your First Environment
+
+```bash
+python3 -m venv ~/envs/guo_lab        # Create environment
+source ~/envs/guo_lab/bin/activate    # Activate it
+```
+
+When activated, you will see `(guo_lab)` in your prompt.
+
+To deactivate:
+
+```bash
+deactivate
+```
+
+---
+
+## 4. Install Python Packages
+
+```bash
+pip install numpy
+pip install pandas
+```
+
+These packages are installed locally inside the environment.
+
+---
+
+## 5. Environment Management Commands
+
+| Command | Description |
+|--------|-------------|
+| `pip list` | Show installed packages |
+| `pip freeze > requirements.txt` | Save environment to file |
+| `pip install -r requirements.txt` | Install packages from file |
+
+💡 **Tip**: Create a base environment with common packages. Later, duplicate it and add project-specific packages as needed.
+
+---
+
+## 6. Useful Linux Commands
+
+| Command | Description |
+|---------|-------------|
+| `chmod +x script.sh` | Make script executable |
+| `./script.sh` | Run an executable script |
+
+---
+
+## Notes
+
+- Always activate the environment before installing packages or running Python scripts.
+- Keep your `requirements.txt` under version control for reproducibility.
