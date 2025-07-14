@@ -191,6 +191,8 @@ curl http://example.com        # Fetch web page
 wget http://example.com/file   # Download file
 scp file user@host:/path       # Secure file copy
 ssh user@remote_ip             # SSH into remote system
+
+git clone https://github.com/username/repo-name.git  # Clones the github folder
 ```
 
 ---
