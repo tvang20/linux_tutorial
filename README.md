@@ -153,6 +153,7 @@ pip install package_name                # Install Python package
 pip list                                # List installed packages
 pip freeze > requirements.txt           # Save installed packages
 pip install -r requirements.txt         # Install from file
+rm -r /path/to/environment/             # Delete the environment
 ```
 
 ---
