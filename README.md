@@ -207,6 +207,8 @@ clear                          # Clear terminal screen
 echo $PATH                     # Show environment PATH variable
 which command_name             # Find full path of a command
 man ls                         # Manual/help page for a command
+
+To rerun commands from history, you can use ! followed by the command number, EXP "!356"
 ```
 
 ---
